@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/devcontainers/base:bullseye
 RUN apt update && export DEBIAN_FRONTEND=noninteractive \
     && apt install -y git build-essential gdb python3-pip ruby-dev npm wget unzip file
 
-RUN apt install -y sagemath wireshark audacity
+RUN DEBIAN_FRONTEND=noninteractive apt install -y sagemath wireshark audacity
 
 RUN pip3 install --upgrade pip && pip3 install pwntools ROPgadget Pycryptodome
 
