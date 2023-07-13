@@ -1,15 +1,11 @@
 {
 	"name": "Container",
 	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {
-			"USERNAME": "vscode",
-			"BUILDKIT_INLINE_CACHE": "0"
-		}
+		"dockerfile": "Dockerfile"
 	},
 	"features": {
 		"ghcr.io/devcontainers/features/desktop-lite:1": {},
-		"ghcr.io/devcontainers/features/docker-in-docker:1": {}
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
 	},
 	"forwardPorts": [
 		6080
