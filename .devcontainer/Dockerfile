@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/devcontainers/base:bullseye
 
 RUN apt update && export DEBIAN_FRONTEND=noninteractive \
-    && apt install -y git build-essential gdb python3-pip ruby-dev wget unzip file
+    && apt install -y git build-essential gdb python3-pip ruby-dev npm wget unzip file
 
 RUN apt install -y sagemath wireshark audacity
 
