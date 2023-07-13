@@ -1,7 +1,11 @@
 {
 	"name": "Container",
 	"build": {
-		"dockerfile": "Dockerfile"
+		"dockerfile": "Dockerfile",
+		"args": {
+			"USERNAME": "vscode",
+			"BUILDKIT_INLINE_CACHE": "0"
+		}
 	},
 	"features": {
 		"ghcr.io/devcontainers/features/desktop-lite:1": {},
