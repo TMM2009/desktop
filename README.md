@@ -7,7 +7,6 @@ This repository contains a codespace pre-configured for CTF purposes. It has var
 * Ghidra
 * pwntools
 * ROPgadget
-* Docker
 * zsteg
 * Stegsolve
 * Audacity
