@@ -26,5 +26,5 @@ RUN bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
 
 RUN usermod -s /bin/bash vscode
 
-RUN echo "export LC_CTYPE=C.UTF-8; alias python=python3; alias stegsolve='java -jar /opt/Stegsolve.jar'; alias recaf='java -jar /opt/recaf.jar'" >> /home/vscode/.bashrc
-RUN echo "ENV=$HOME/.bashrc; export ENV" >> /home/vscode/.profile
+RUN echo "export LC_CTYPE=C.UTF-8; alias python=python3; alias stegsolve='java -jar /opt/Stegsolve.jar'; alias recaf='java -jar /opt/recaf.jar'" >> /home/vscode/.shinit
+RUN echo "ENV=$HOME/.shinit; export ENV" >> /home/vscode/.profile
