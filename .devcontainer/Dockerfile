@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/devcontainers/base:bullseye
 
 RUN apt update && export DEBIAN_FRONTEND=noninteractive \
-    && apt install -y git build-essential gdb python3-pip ruby-dev npm wget unzip file
+    && apt install -y git build-essential gdb python3-pip openjdk-11-jdk ruby-dev npm wget unzip file jd-gui
 
 RUN DEBIAN_FRONTEND=noninteractive apt install -y wireshark audacity firefox-esr
 
