@@ -16,7 +16,7 @@ RUN git clone https://github.com/RsaCtfTool/RsaCtfTool.git /opt/RsaCtfTool \
     && pip3 install -r requirements.txt \
     && ln -s /opt/RsaCtfTool/RsaCtfTool.py /usr/local/bin/rsactftool
 
-RUN wget -O /opt/recaf.jar https://github.com/Col-E/Recaf/releases/download/2.21.13/recaf-2.21.13.jar
+RUN wget -O /opt/recaf.jar https://github.com/Col-E/Recaf/releases/download/2.21.13/recaf-2.21.13-J8-jar-with-dependencies.jar
 
 USER vscode
 
@@ -24,4 +24,6 @@ SHELL ["/bin/bash", "-c"]
 
 RUN bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
 
-RUN echo "export LC_CTYPE=C.UTF-8; alias python=python3; alias stegsolve='java -jar /opt/Stegsolve.jar'; alias recaf='java -jar /opt/recaf.jar" >> /home/vscode/.bashrc
+RUN chsh -s /bin/bash
+
+RUN echo "export LC_CTYPE=C.UTF-8; alias python=python3; alias stegsolve='java -jar /opt/Stegsolve.jar'; alias recaf='java -jar /opt/recaf.jar'" >> /home/vscode/.bashrc

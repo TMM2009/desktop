@@ -12,7 +12,7 @@ This repository contains a codespace pre-configured for CTF purposes. It has var
 * Stegsolve
 * Audacity
 * RsaCtfTool
-* JD-GUI
+* Recaf
 
 ## Sagemath
 
