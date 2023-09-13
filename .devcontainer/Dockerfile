@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/devcontainers/base:bullseye
 
 RUN apt update && export DEBIAN_FRONTEND=noninteractive \
-    && apt install -y git build-essential gdb python3-pip openjdk-11-jdk ruby-dev npm wget unzip file
+    && apt install -y git build-essential gdb python3-pip openjdk-11-jdk ruby-dev npm wget unzip file netcat
 
 RUN DEBIAN_FRONTEND=noninteractive apt install -y wireshark audacity firefox-esr
 
@@ -27,3 +27,4 @@ RUN bash -c "$(curl -fsSL https://gef.blah.cat/sh)"
 RUN usermod -s /bin/bash vscode
 
 RUN echo "export LC_CTYPE=C.UTF-8; alias python=python3; alias stegsolve='java -jar /opt/Stegsolve.jar'; alias recaf='java -jar /opt/recaf.jar'" >> /home/vscode/.bashrc
+RUN echo "ENV=$HOME/.bashrc; export ENV" >> /home/vscode/.profile
