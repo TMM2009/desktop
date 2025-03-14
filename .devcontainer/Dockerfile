@@ -1,9 +1,16 @@
-FROM mcr.microsoft.com/devcontainers/base:bullseye
+FROM debian:bullseye
 
 RUN apt update && export DEBIAN_FRONTEND=noninteractive \
-    && apt install -y git build-essential gdb python3-pip openjdk-11-jdk ruby-dev npm wget unzip file netcat
+    && apt install -y git build-essential gdb python3-pip openjdk-11-jdk ruby-dev npm wget unzip file netcat curl
 
-RUN DEBIAN_FRONTEND=noninteractive apt install -y wireshark audacity firefox-esr
+# Install glibc 2.34 manually
+RUN wget http://ftp.gnu.org/gnu/libc/glibc-2.34.tar.gz && \
+    tar -xvzf glibc-2.34.tar.gz && cd glibc-2.34 && \
+    mkdir build && cd build && \
+    ../configure --prefix=/usr && make -j$(nproc) && make install && \
+    cd / && rm -rf glibc-2.34 glibc-2.34.tar.gz
+
+RUN apt install -y wireshark audacity firefox-esr
 
 RUN pip3 install --upgrade pip && pip3 install pwntools ROPgadget Pycryptodome
 
